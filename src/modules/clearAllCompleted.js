@@ -9,11 +9,11 @@ const clearAllCompletedHandler = (e) => {
       tasks = tasks.filter((todo) => todo.index.toString() !== element.index.toString());
     }
   });
-  const IndexChengedArray = [];
+  const reIndexedArray = [];
   tasks.sort((x, y) => x.index - y.index).forEach((element, index) => {
-    IndexChengedArray.push(new Todo(element.description, element.completed, index + 1));
+    reIndexedArray.push(new Todo(element.description, element.completed, index + 1));
   });
-  storeData(IndexChengedArray);
+  storeData(reIndexedArray);
   window.location.reload();
 };
 
